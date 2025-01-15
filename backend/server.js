@@ -4,6 +4,8 @@ const app = express();
 
 const PORT = 4000;
 
+const path = require('path')
+
 const mongoClient = require("mongodb").MongoClient;
 
 mongoClient
@@ -24,15 +26,15 @@ mongoClient
 
 app.use(express.json());
 
+//JOIN FRONTEND AND BACKEND
+app.use(express.static(path.join(__dirname,'../frontend/build')))
+
 const userApp = require("./apis/user-api");
 const msgsApp = require("./apis/messages-api");
 
 app.use("/user-api", userApp);
 app.use("/messages-api", msgsApp);
 
-app.get('/',(req,res)=>{
-	res.send("hello world");
-})
 
 app.use((err, req, res, next) => {
 	res.send({ errMessage: err });

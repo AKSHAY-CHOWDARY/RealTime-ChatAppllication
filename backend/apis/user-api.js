@@ -17,9 +17,7 @@ userApp.use((req,res,next)=>{
 userApp.post('/register',expressAsyncHandler(async(req,res)=>{
 
     const user = req.body;
-    console.log("req arrived");
-
-    console.log(user);
+    
     let dbres = await usersCollection.findOne({email:user.email});
    
     if(dbres==null){
