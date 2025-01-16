@@ -8,7 +8,7 @@ import Home from "./components/Home";
 
 function App() {
 	return (
-		<div>
+		<div className="-mt-3" >
 			<Navigation />
 			<Routes>
 				<Route path="/" element={<SignIn/>}/>

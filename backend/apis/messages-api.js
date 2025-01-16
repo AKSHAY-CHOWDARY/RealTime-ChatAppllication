@@ -11,16 +11,25 @@ msgsApp.use((req,res,next)=>{
 })
 
 //SEND MESSAGE
-msgsApp.post('/send/:id',expressAsyncHandler(async(req,res)=>{
+//SEND MESSAGE
+msgsApp.post('/send/:id', expressAsyncHandler(async (req, res) => {
     console.log(req.body);
+    
     let senderId = req.body._id;
     let receiverId = req.params.id;
     let text = req.body.text;
-    let message = {senderId:senderId,receiverId:receiverId,text:text};
-    
+
+    let timestamp = new Date().toISOString(); 
+    let message = {
+        senderId: senderId,
+        receiverId: receiverId,
+        text: text,
+        timestamp: timestamp
+    };
+
     await msgsCollection.insertOne(message);
-    return res.send({message:"message sent"});
-}))
+    return res.send({ message: "message sent", data: message });
+}));
 
 
 //GET MESSAGES

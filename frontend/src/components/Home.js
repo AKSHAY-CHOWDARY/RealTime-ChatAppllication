@@ -17,7 +17,7 @@ function Home() {
 
         {/* Main Chat Section */}
         <div className="w-3/4">
-          {selectedUser == null ? <NoChat /> : <ChatContainer />}
+          {selectedUser._id? <ChatContainer /> : <NoChat />}
         </div>
       </div>
     </div>
