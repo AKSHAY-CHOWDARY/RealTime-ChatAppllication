@@ -3,6 +3,7 @@ const express = require("express");
 const { app, server } = require("./socket");
 const path = require("path");
 const mongoClient = require("mongodb").MongoClient;
+const cors = require("cors");
 
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;
@@ -26,6 +27,8 @@ mongoClient
     });
 
 app.use(express.json());
+
+app.use(cors());
 
 // Serve static files from the frontend
 app.use(express.static(path.join(__dirname, "../frontend/build")));
