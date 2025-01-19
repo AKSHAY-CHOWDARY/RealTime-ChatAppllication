@@ -18,7 +18,7 @@ function Register() {
 	const SignupUser = async (data) => {
 		try {
 			const res = await axios.post(
-				`${process.env.BACKEND_BASE_URL}/user-api/register`,
+				`${process.env.REACT_APP_BACKEND_BASE_URL}/user-api/register`,
 				data
 			);
 			if (res.data.message === "User registered successfully") {

@@ -70,7 +70,7 @@ function ChatContainer() {
 			};
 
 			const response = await axiosWithToken.post(
-				`${process.env.BACKEND_BASE_URL}/messages-api/send/${selectedUser._id}`,
+				`${process.env.REACT_APP_BACKEND_BASE_URL}/messages-api/send/${selectedUser._id}`,
 				payload
 			);
 

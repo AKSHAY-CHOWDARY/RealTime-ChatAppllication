@@ -8,7 +8,8 @@ export const userLoginThunk = createAsyncThunk(
     "userLogin",
     async (userCred, thunkApi) => {
         try {
-            const res = await axios.post(`${process.env.BACKEND_BASE_URL}/user-api/login`, userCred);
+            console.log(`${process.env.REACT_APP_BACKEND_BASE_URL}/user-api/login`);
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/user-api/login`, userCred);
 
             if (res.data.message === "Login successful") {
                 // Store token in session storage
@@ -17,7 +18,7 @@ export const userLoginThunk = createAsyncThunk(
                 // Initialize socket connection
                 let socket;
                 try {
-                    socket = io(`${process.env.BACKEND_BASE_URL}`, {
+                    socket = io(`${process.env.REACT_APP_BACKEND_BASE_URL}`, {
                         query: { userId: res.data.payload._id },
                     });
 

@@ -11,7 +11,7 @@ export const loadMessagesthunk = createAsyncThunk(
 			const selectedUserId = data.selectedUser._id;
 
 			const res = await axiosWithToken.post(
-				`${process.env.BACKEND_BASE_URL}/messages-api/${selectedUserId}`,
+				`${process.env.REACT_APP_BACKEND_BASE_URL}/messages-api/${selectedUserId}`,
 				myobj
 			);
 
@@ -39,7 +39,7 @@ export const loadUsersthunk = createAsyncThunk(
 			const obj = { email: data.email };
 
 			const res = await axiosWithToken.post(
-				`${process.env.BACKEND_BASE_URL}/user-api/users`,
+				`${process.env.REACT_APP_BACKEND_BASE_URL}/user-api/users`,
 				obj
 			);
 
