@@ -5,10 +5,12 @@ import Register from "./components/Register";
 import SignIn from "./components/Login";
 import Home from "./components/Home";
 
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
 	return (
 		<div className="-mt-3" >
+			<ToastContainer/>
 			<Navigation />
 			<Routes>
 				<Route path="/" element={<SignIn/>}/>

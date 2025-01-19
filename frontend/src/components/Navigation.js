@@ -22,13 +22,13 @@ function Navigation() {
 			<nav className="flex justify-between items-center">
 				<div className="flex space-x-2">
 					<IoMdChatbubbles color="#FAE7DC" size={30} />
-					<p className="text-black font-bold font-mono text-xl">Chat</p>
+					<p className="text-white font-bold font-mono text-xl">Chat</p>
 				</div>
 				<div className="flex space-x-4">
 					<div className="flex space-x-1 justify-center items-center md:bg-secondary text-black px-2 py-1 md:rounded-md">
-						<IoIosSettings size={20} />
-						<p className="hidden md:block font-mono text-sm cursor-pointer">
-							Settings
+						<IoIosSettings color="#f7f4e9" size={30} />
+						<p className="hidden md:block font-semibold font-mono text-sm cursor-pointer">
+							Settings 
 						</p>
 					</div>
 					{loginStatus ? (
